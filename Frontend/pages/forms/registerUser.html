@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMS | User Register</title>
+
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="../../plugins/fontawesome-free-6.2.1-web/css/all.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<link rel="shortcut icon" type="image/png" href="../../dist/img/bjitLogo.png">
+
+
+</head>
+<body class="hold-transition sidebar-collapse">
+    <div class="wrapper">
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container container-register-form">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <!-- /.card-header -->
+                        <div class="card-body" id="myForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name</label>
+                                        <input class="form-control form-control" id="fullName" type="text" name="fullName" placeholder="eg: Akash Chakraborty">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="contactNumber">Contact</label>
+                                        <input class="form-control form-control" id="contactNumber" type="text" name="contactNumber" placeholder="+8801*********" maxlength="14" minlength="11">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="presentAddress">Present Address</label>
+                                        <input class="form-control form-control" id="presentAddress" name="presentAddress" type="text">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="image">Image</label>
+                                        <input class="form-control form-control" id="image" name="image" type="text">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input class="form-control" id="email" type="email" name="email" placeholder="yourname@example.com">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input class="form-control form-control" id="password" name="password" type="password">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="role">Role</label>
+                                        <select class="form-control form-control select2bs4" id="role" name="traineeGender" style="width: 100%;">
+                                            <option selected="selected">TRAINEE</option>
+                                            <option>TRAINER</option>
+                                        </select>
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer text-center">
+                            <button type="button" class="btn btn-primary" id="registerUser">Register</button>
+                        </div>
+                    </div>
+                    <!-- /.card -->  
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <script>
+        document.getElementById("registerUser").addEventListener("click", function() {
+            const jsonObject = {
+                fullName: document.getElementById("fullName").value,
+                contactNumber: document.getElementById("contactNumber").value,
+                presentAddress: document.getElementById("presentAddress").value,
+                image: document.getElementById("image").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                role: document.getElementById("role").value,
+            };
+    
+            // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint URL
+            const apiEndpoint = 'http://localhost:8081/ems/user/register';
+    
+            fetch(apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonObject)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Redirect to the login.html page
+                window.location.href = "loginUser.html";
+                // Handle the API response data if needed
+                // console.log(data);
+                // alert("Form data submitted successfully!");
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("An error occurred while submitting the form data.");
+            });
+        });
+    </script>
+
+</body>
+</html>

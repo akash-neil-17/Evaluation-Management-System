@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMS | Upload Aptitude & Interview</title>
+
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="../../plugins/fontawesome-free-6.2.1-web/css/all.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<link rel="shortcut icon" type="image/png" href="../../dist/img/bjitLogo.png">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="trainerDashboard.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="trainerProfile.html" class="nav-link">Profile</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="trainerDashboard.html" class="brand-link">
+                <img src="../../dist/img/bjitLogo.png" alt="BJIT Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">BJIT Academy</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+            
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                        with font-awesome or any other icon font library -->
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa-sharp fa-solid fa-code"></i>
+                                <p>
+                                    Task
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="createTask.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="viewTaskTrainer.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>View</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="viewSubmission.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Submissions</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-user-pen"></i>
+                            <p>
+                                Marks
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item menu-open">
+                                    <a href="#" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        Upload
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="uploadMarksDailyTask.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Daily/Mini/Mid</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="uploadMarksFinalProject.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Final</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="uploadMarksManagerEvaluation.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Manager's Evaluation</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="uploadMarksAptitude.html" class="nav-link active">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Aptitude Test & Interview</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="viewMarksTrainer.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>View</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Upload Aptitude & Interview Marks</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="uploadMarksAptitude.html">Aptitude & Interview</a></li>
+                            <li class="breadcrumb-item active">Upload</li>
+                            <li class="breadcrumb-item active">Marks</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content" style="margin-top: 5px;">
+                <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="batchName">Batch</label>
+                                        <select class="form-control form-control select2bs4" id="batchName" name="batchName" style="width: 100%;">
+                                            <option selected="selected">JAVA</option>
+                                            <option>MERN</option>
+                                            <option>QA</option>
+                                            <option>DevOps</option>
+                                        </select>
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="fullName">Trainee Name</label>
+                                        <select class="form-control form-control select2bs4" id="fullName" name="fullName" style="width: 100%;">
+                                            <option selected="selected">Trainee 1</option>
+                                            <option>Trainee 2</option>
+                                            <option>Trainee 3</option>
+                                            <option>Trainee 4</option>
+                                        </select>
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary" id="loadData">Load</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="aptitudeTest">Aptitude Test</label>
+                                        <input class="form-control form-control" id="aptitudeTest" name="aptitudeTest" type="number">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="interview">Interview</label>
+                                        <input class="form-control form-control" id="interview" name="interview" type="number">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                            
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary" id="uploadAptitudeMarks">Upload</button>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                    
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+            <!-- <b>Version</b> 3.2.0
+            -->
+            </div>
+            <strong> Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | by <a href="#" target="_blank" rel="noopener">Akash Chakraborty</a>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="../../plugins/select2/js/select2.full.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMS | User Login</title>
+
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="../../plugins/fontawesome-free-6.2.1-web/css/all.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<link rel="shortcut icon" type="image/png" href="../../dist/img/bjitLogo.png">
+</head>
+<body class="hold-transition sidebar-collapse">
+    <div class="wrapper">
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <!-- /.card-header -->
+                        <div class="card-body" id="myForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input class="form-control" id="email" type="email" name="email" placeholder="yourname@example.com">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input class="form-control form-control" id="password" name="password" type="password">
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer text-center">
+                            <button type="button" class="btn btn-primary" id="loginUser">Login</button>
+                        </div>
+                    </div>
+                    <!-- /.card -->  
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    
+    <script>
+        document.getElementById("loginUser").addEventListener("click", function() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const loginData = {
+                email: email,
+                password: password
+            };
+
+            const apiEndpoint = 'http://localhost:8081/ems/user/login';
+
+            fetch(apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(loginData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Save the JWT token in local storage for later use
+                localStorage.setItem('jwtToken', data.token);
+
+                // Decode the JWT token to extract the user's role information
+                const decodedToken = parseJwt(data.token);
+                const userRole = decodedToken.roles[0].authority;
+
+                // Redirect to the appropriate dashboard based on the user's role
+                if (userRole === 'TRAINER') {
+                    window.location.href = 'trainerDashboard.html';
+                } else if (userRole === 'TRAINEE') {
+                    window.location.href = 'traineeDashboard.html';
+                } else if (userRole === 'ADMIN') {
+                    window.location.href = 'adminDashboard.html';
+                } else {
+                    alert('Invalid role in JWT token.'); // Handle other roles if needed
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Invalid email or password. Please try again.");
+            });
+        });
+
+        // Function to decode JWT token
+        function parseJwt(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+            return JSON.parse(jsonPayload);
+        }
+    </script>
+
+
+</body>
+</html>

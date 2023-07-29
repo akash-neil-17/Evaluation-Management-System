@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMS | Assign Trainee</title>
+
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="../../plugins/fontawesome-free-6.2.1-web/css/all.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<link rel="shortcut icon" type="image/png" href="../../dist/img/bjitLogo.png">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="adminDashboard.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="assignTrainee.html" class="nav-link active">Assign Trainee</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="adminDashboard.html" class="brand-link">
+                <img src="../../dist/img/bjitLogo.png" alt="BJIT Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">BJIT Academy</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+            
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                        with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa-sharp fa-solid fa-code"></i>
+                                <p>
+                                    Create
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="createBatch.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Batch</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="createTaskType.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Task Type</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-user-pen"></i>
+                            <p>
+                                Marks
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        View
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="viewDailyMarksAdmin.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Daily/Mini/Mid</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="viewFinalMarksAdmin.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Final</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="viewManagerMarksAdmin.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Manager's Evaluation</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="viewAptitudeMarksAdmin.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Aptitude Test & Interview</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="generateFinalScore.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Generate Final Score</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Assign Trainee</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item active">Assign Trainee</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content" style="margin-top: 5px;">
+                <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="fullName">Trainee Name</label>
+                                        <select class="form-control form-control select2bs4" id="fullName" name="fullName" style="width: 100%;">
+                                            <option value="" selected="selected">Select</option>
+                                        </select>
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="batchName">Batch</label>
+                                        <select class="form-control form-control select2bs4" id="batchName" name="batchName" style="width: 100%;">
+                                            <option value="" selected="selected">Select</option>
+                                        </select>
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary" id="assignBatch">Assign</button>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+            <!-- <b>Version</b> 3.2.0
+            -->
+            </div>
+            <strong> Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | by <a href="#" target="_blank" rel="noopener">Akash Chakraborty</a>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+
+    <script>
+        // Function to fetch and populate Trainee names
+        function fetchTraineeNames() {
+            const traineeSelect = document.getElementById("fullName");
+            const traineeAPI = 'http://localhost:8081/ems/trainee/all';
+    
+            fetch(traineeAPI, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
+                }
+            })
+                .then(response => response.json())
+                .then(trainees => {
+                    trainees.forEach(trainee => {
+                        const option = document.createElement("option");
+                        option.text = trainee.userEntity.fullName;
+                        // option.name = trainee.userEntity.fullName;
+                        option.value = trainee.userEntity.fullName;
+                        traineeSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Trainee names:', error));
+        }
+    
+        // Function to fetch and populate Batch names
+        function fetchBatchNames() {
+            const batchSelect = document.getElementById("batchName");
+            const batchAPI = 'http://localhost:8081/ems/batch/all';
+    
+            fetch(batchAPI, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
+                }
+            })
+                .then(response => response.json())
+                .then(batches => {
+                    batches.forEach(batch => {
+                        const option = document.createElement("option");
+                        option.text = batch.batchName;
+                        // option.name = batch.batchName;
+                        option.value = batch.batchName;
+                        batchSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Batch names:', error));
+        }
+    
+        // Fetch Trainee names and Batch names when the page loads
+        window.onload = function() {
+            fetchTraineeNames();
+            fetchBatchNames();
+        };
+    
+        // Event listener for the Assign button click
+        document.getElementById("assignBatch").addEventListener("click", function() {
+            const selectedTrainee = document.getElementById("fullName").value;
+            const selectedBatch = document.getElementById("batchName").value;
+            
+            const updateData = {
+                fullName: selectedTrainee,
+                batchName: selectedBatch,
+            };
+            console.log(updateData)
+            // Check if both Trainee Name and Batch Name are selected
+            if (selectedTrainee === "Select" || selectedBatch === "Select") {
+                alert("Please select both Trainee Name and Batch.");
+                return;
+            }
+            
+    
+            // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint URL
+            const apiEndpoint = 'http://localhost:8081/ems/admin/assign';
+    
+            // Make the API request to assign the Trainee to the Batch
+            fetch(apiEndpoint, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
+                },
+                body: JSON.stringify(updateData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                // return response.json();
+            })
+            .then(data => {
+                // Handle the API response data if needed
+                console.log(data);
+                alert("Trainee assigned successfully!");
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("An error occurred while assigning the Trainee.");
+            });
+        });
+    </script>
+
+</body>
+</html>

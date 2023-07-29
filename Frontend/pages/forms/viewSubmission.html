@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMS | View Submission</title>
+
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="../../plugins/fontawesome-free-6.2.1-web/css/all.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<link rel="shortcut icon" type="image/png" href="../../dist/img/bjitLogo.png">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="trainerDashboard.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="trainerProfile.html" class="nav-link">Profile</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="trainerDashboard.html" class="brand-link">
+                <img src="../../dist/img/bjitLogo.png" alt="BJIT Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">BJIT Academy</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+            
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                        with font-awesome or any other icon font library -->
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fa-sharp fa-solid fa-code"></i>
+                                <p>
+                                    Task
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="createTask.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="viewTaskTrainer.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>View</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="viewSubmission.html" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Submissions</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-user-pen"></i>
+                            <p>
+                                Marks
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        Upload
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="uploadMarksDailyTask.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Daily/Mini/Mid</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="uploadMarksFinalProject.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Final</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="uploadMarksManagerEvaluation.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Manager's Evaluation</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="uploadMarksAptitude.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Aptitude Test & Interview</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="viewMarksTrainer.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>View</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>View Submission</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="viewSubmission.html">Submissions</a></li>
+                            <li class="breadcrumb-item active">Task</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content" style="margin-top: 5px;">
+                <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="typeName">Task type</label>
+                                        <select class="form-control form-control select2bs4" id="typeName" name="typeName" style="width: 100%;">
+                                            <option selected="selected">Select</option>
+                                        </select>
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="batchName">Batch</label>
+                                        <select class="form-control form-control select2bs4" id="batchName" name="batchName" style="width: 100%;">
+                                            <option selected="selected">Select</option>
+                                        </select>
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary" id="loadData">Load</button>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                    <!-- View Task Table -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">View Submissions</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-head-fixed table-hover text-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Submission Date</th>
+                                                <th>Trainee ID</th>
+                                                <th>Batch Name</th>
+                                                <th>Task Type</th>
+                                                <th>Task File</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="taskTableBody">
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+            <!-- <b>Version</b> 3.2.0
+            -->
+            </div>
+            <strong> Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | by <a href="#" target="_blank" rel="noopener">Akash Chakraborty</a>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="../../plugins/select2/js/select2.full.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+
+    <script>
+        // Function to fetch and populate Trainee names
+        function fetchTraineeNames() {
+            const traineeSelect = document.getElementById("fullName");
+            const traineeAPI = 'http://localhost:8081/ems/trainee/all';
+    
+            fetch(traineeAPI, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
+                }
+            })
+                .then(response => response.json())
+                .then(trainees => {
+                    trainees.forEach(trainee => {
+                        const option = document.createElement("option");
+                        option.text = trainee.userEntity.fullName;
+                        // option.name = trainee.userEntity.fullName;
+                        option.value = trainee.userEntity.fullName;
+                        traineeSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Trainee names:', error));
+        }
+    
+        // Function to fetch and populate Batch names
+        function fetchBatchNames() {
+            const batchSelect = document.getElementById("batchName");
+            const batchAPI = 'http://localhost:8081/ems/batch/all';
+    
+            fetch(batchAPI, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
+                }
+            })
+                .then(response => response.json())
+                .then(batches => {
+                    batches.forEach(batch => {
+                        const option = document.createElement("option");
+                        option.text = batch.batchName;
+                        // option.name = batch.batchName;
+                        option.value = batch.batchName;
+                        batchSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Batch names:', error));
+        }
+        // Function to fetch and populate Batch names
+        function fetchTaskType() {
+            const typeSelect = document.getElementById("typeName");
+            const typeAPI = 'http://localhost:8081/ems/task-type/all';
+    
+            fetch(typeAPI, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
+                }
+            })
+                .then(response => response.json())
+                .then(types => {
+                    types.forEach(type => {
+                        const option = document.createElement("option");
+                        option.text = type.typeName;
+                        // option.name = type.batchName;
+                        option.value = type.typeName;
+                        typeSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching Batch names:', error));
+        }
+    
+        // Fetch Trainee names and Batch names when the page loads
+        window.onload = function() {
+            fetchTaskType();
+            fetchBatchNames();
+        };
+    
+        // Event listener for the Assign button click
+        document.getElementById("loadData").addEventListener("click", function() {
+            const selectedTaskType = document.getElementById("typeName").value;
+            const selectedBatch = document.getElementById("batchName").value;
+            
+            const updateData = {
+                typeName: selectedTaskType,
+                batchName: selectedBatch,
+            };
+            console.log(updateData)
+            // Check if both Trainee Name and Batch Name are selected
+            if (selectedTaskType === "Select" || selectedBatch === "Select") {
+                alert("Please select both Type Name and Batch.");
+                return;
+            }
+            
+    
+            // Replace 'YOUR_API_ENDPOINT' with your actual API endpoint URL
+            const apiEndpoint = 'http://localhost:8081/ems/trainee/task/view';
+    
+            // Make the API request to assign the Trainee to the Batch
+            fetch(apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
+                },
+                body: JSON.stringify(updateData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(response => {
+                console.log(response);
+                const data = response.data;
+                // Process the API response and populate the table
+                const tableBody = document.getElementById("taskTableBody");
+                tableBody.innerHTML = ""; // Clear existing table rows
+
+                data.forEach(submission => { // <-- Change 'task' to 'submission'
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${submission.submissionID}</td>
+                        <td>${new Date(submission.submissionDate).toLocaleString()}</td>
+                        <td>${submission.traineeEntity.traineeID}</td>
+                        <td>${submission.batchEntity.batchName}</td>
+                        <td>${submission.taskType.typeName}</td>
+                        <td>${submission.file}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("An error occurred while fetching the data");
+            });
+        });
+    </script>
+
+</body>
+</html>
